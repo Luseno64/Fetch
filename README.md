@@ -55,7 +55,6 @@ To use a config file, create an INI formatted file like this:
 [default]
 aws_access_key_id=<default access key>
 aws_secret_access_key=<default secret key>
-# Optional, to define default region for this profile.
 region=us-west-1
 
 [profile testing]
@@ -67,5 +66,7 @@ and place it in ~/.aws/config (or in %UserProfile%\.aws\config on Windows). If y
 $ export AWS_CONFIG_FILE=/path/to/config_file
   
 [run code]
+
 once you have configured and pasted your public key into your yaml file run code with:
+
 $ python3 EC2.py
