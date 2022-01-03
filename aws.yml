@@ -1,0 +1,24 @@
+---
+  # This YAML configuration specifies a server with two volumes and two users
+  server:
+    instance_type: t2.micro
+    ami_type: amzn2
+    architecture: x86_64
+    root_device_type: ebs
+    virtualization_type: hvm
+    min_count: 1
+    max_count: 1
+    volumes:
+      - device: /dev/xvda
+        size_gb: 10
+        type: xfs
+        mount: /
+      - device: /dev/xvdf
+        size_gb: 20
+        type: ext4
+        mount: /data
+    users:
+      - login: user1
+        ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQD5HTrlbkrp0ietUKANm5FogLVecNjVPy9G8O3XgzJcFaP4AspFOOayFmgHd1ERu4f8OfDEaiWCG6M/OhrYIJ6HSWa4YzODh34j/pRSbTIj9v7CykfZ3pwub/OALzv3ImNiczMcVP7Ige0kU/QU4Mnert40OdGbCDRF+jHJaJ4TAtrpKEFtdmcN/xAmGq8qv2lCUvR7Ivl1KLjg0xrXHm9PYfPoGHx9A/wtudkgIIOp1FB0AUpPS7pnHlwpOM1KmrWYN3cq3zsigprdtM+JEUPVKcwbYACyDiRZkEHBhwSaEHqGloajH+tro2BIRbx3qj2Dr3VdAC9yHV0wdxQT/tWA8HLTLDNAF65bYt1OKPpeFUT3h5kFQrZIazW4NyLjdjQse3ygiDcaPkrr4diZZ7D8Sc9n3pxDJKvlCOK785DQ7reSeqdGjuCRAiO0CCrGzEi4GhEJB83wu9Kg7Loq3A/SiBWa8gYg5oUT8/hTzEqbpiv2COlZ5qzZNp3DuIY7sWyDIgf4Yrp5kW/s2hnp0kZD1shX8I6QtJwiTKPUdfc9GomdN85YeL5D7BjcpI9QnkeUbdmIWV/opJOdStQqOeDFOwWEO9Vro0XTISBVZ+C8aI/kcOBvcC+bG8CU6Z5HC/ZdadwT6wwe00sZ1Jk5wtgTzqNsensj7xz5tCNd8OUXYw== nlm64@txstate.edu
+      - login: user2
+        ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQD5HTrlbkrp0ietUKANm5FogLVecNjVPy9G8O3XgzJcFaP4AspFOOayFmgHd1ERu4f8OfDEaiWCG6M/OhrYIJ6HSWa4YzODh34j/pRSbTIj9v7CykfZ3pwub/OALzv3ImNiczMcVP7Ige0kU/QU4Mnert40OdGbCDRF+jHJaJ4TAtrpKEFtdmcN/xAmGq8qv2lCUvR7Ivl1KLjg0xrXHm9PYfPoGHx9A/wtudkgIIOp1FB0AUpPS7pnHlwpOM1KmrWYN3cq3zsigprdtM+JEUPVKcwbYACyDiRZkEHBhwSaEHqGloajH+tro2BIRbx3qj2Dr3VdAC9yHV0wdxQT/tWA8HLTLDNAF65bYt1OKPpeFUT3h5kFQrZIazW4NyLjdjQse3ygiDcaPkrr4diZZ7D8Sc9n3pxDJKvlCOK785DQ7reSeqdGjuCRAiO0CCrGzEi4GhEJB83wu9Kg7Loq3A/SiBWa8gYg5oUT8/hTzEqbpiv2COlZ5qzZNp3DuIY7sWyDIgf4Yrp5kW/s2hnp0kZD1shX8I6QtJwiTKPUdfc9GomdN85YeL5D7BjcpI9QnkeUbdmIWV/opJOdStQqOeDFOwWEO9Vro0XTISBVZ+C8aI/kcOBvcC+bG8CU6Z5HC/ZdadwT6wwe00sZ1Jk5wtgTzqNsensj7xz5tCNd8OUXYw== nlm64@txstate.edu
