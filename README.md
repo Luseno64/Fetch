@@ -30,6 +30,7 @@ IAM Role
 The quickest way to get started is to run the aws configure command:
 
 $ aws configure
+
 AWS Access Key ID: MYACCESSKEY
 AWS Secret Access Key: MYSECRETKEY
 Default region name [us-west-2]: us-west-2
@@ -41,10 +42,12 @@ $ export AWS_SECRET_ACCESS_KEY=<secret_key>
 To use the shared credentials file, create an INI formatted file like this:
 
 [default]
+
 aws_access_key_id=MYACCESSKEY
 aws_secret_access_key=MYSECRETKEY
 
 [testing]
+
 aws_access_key_id=MYACCESKEY
 aws_secret_access_key=MYSECRETKEY
 and place it in ~/.aws/credentials (or in %UserProfile%\.aws/credentials on Windows). If you wish to place the shared credentials file in a different location than the one specified above, you need to tell aws-cli where to find it. Do this by setting the appropriate environment variable:
@@ -53,11 +56,13 @@ $ export AWS_SHARED_CREDENTIALS_FILE=/path/to/shared_credentials_file
 To use a config file, create an INI formatted file like this:
 
 [default]
+
 aws_access_key_id=<default access key>
 aws_secret_access_key=<default secret key>
 region=us-west-1
 
 [profile testing]
+  
 aws_access_key_id=<testing access key>
 aws_secret_access_key=<testing secret key>
 region=us-west-2
@@ -70,3 +75,5 @@ $ export AWS_CONFIG_FILE=/path/to/config_file
 once you have configured and pasted your public key into your yaml file run code with:
 
 $ python3 EC2.py
+
+  
