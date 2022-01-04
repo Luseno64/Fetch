@@ -21,4 +21,4 @@
       - login: user1
         ssh_key: --user1 ssh public key goes here-- user1@localhost
       - login: user2
-        ssh_key: --user1 ssh public key goes here-- user1@localhost
+        ssh_key: --user1 ssh public key goes here-- user2@localhost
