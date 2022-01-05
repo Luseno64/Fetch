@@ -91,4 +91,6 @@ once you have configured and pasted your public key into your yaml file run code
 
 $ python3 EC2.py
 
+Access your AWS instance. ssh into server with:
   
+ssh user1@IPaddress or user2@ipaddress
