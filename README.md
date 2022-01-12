@@ -85,12 +85,16 @@ and place it in ~/.aws/config (or in %UserProfile%\.aws\config on Windows). If y
 
 $ export AWS_CONFIG_FILE=/path/to/config_file
   
+Extract the Public key from the private key
+
+ssh-keygen -y -f /path_to_downloaded_key-pair.pem
+
+
+  
 [run code]
 
 once you have configured and pasted your public key into your yaml file run code with:
 
 $ python3 EC2.py
 
-Access your AWS instance. ssh into server with:
-  
-ssh user1@IPaddress or user2@ipaddress
+ access your aws instance account - ssh user1@ipaddress
