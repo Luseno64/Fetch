@@ -10,7 +10,7 @@ IMAGES ['amzn2-hvm-x86_64'] = 'ami-00f7e5c52c0f43726'
 client =  boto3.client('ec2')
 resource = boto3.resource('ec2')
 
-
+#reads yaml file.returns data.
 def read_yml():
       with open('aws.yml') as f:
          data = yaml.load(f,Loader= yaml.FullLoader)
@@ -23,7 +23,7 @@ vol2 = data['volumes'][1]
 user1 = data['users'][0]
 user2 = data['users'][1]
    
-
+#creates key pairs : private and public key pair for aws
 def create_key_pair():
    with open(KEYNAME+'.pem', 'w') as kpfile:
         try:
@@ -34,14 +34,14 @@ def create_key_pair():
             print('Coud not create key-pair.')
             print(type(e).__name__)
       
-
+#create AMI 
 def create_ami():
     ami = data['ami_type']
     ami += '-' + data['virtualization_type']
     ami += '-' +data['architecture']
     return ami
 
-
+#creates user file - specifically file systems as well as access to.
 def get_user_data():
     user_data = '#!/bin/bash\n'
     # mount vol2
@@ -67,6 +67,7 @@ def get_user_data():
     user_data += 'echo %s > /home/%s/.ssh/authorized_keys\n' % (user2['ssh_key'], user2['login'])
     return user_data
 
+# ssh access creation.
 def ssh_access(instance):
         describe = client.describe_instances(
            InstanceIds=[
